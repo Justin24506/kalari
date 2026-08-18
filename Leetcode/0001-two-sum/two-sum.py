@@ -1,6 +1,6 @@
-# https://leetcode.com/problems/two-sum/submissions/2111635943
+# https://leetcode.com/problems/two-sum/submissions/2111657912
 # Runtime 0 ms
-# Memory 20.54 MB
+# Memory 20.48 MB
 
 
 class Solution:
@@ -10,5 +10,5 @@ class Solution:
             if target - num not in dict_nums:
                 dict_nums[num] = index
             else:
-                return [index, dict_nums[target - num]]
+                return [dict_nums[target - num], index]
         return []
