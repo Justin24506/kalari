@@ -1,15 +1,14 @@
-# https://leetcode.com/problems/two-sum/submissions/2111626253
+# https://leetcode.com/problems/two-sum/submissions/2111635943
 # Runtime 0 ms
-# Memory 20.34 MB
+# Memory 20.54 MB
 
 
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         dict_nums = {}
-        for i in range(0, len(nums)):
-            rem = target - nums[i]
-            if rem not in dict_nums:
-                dict_nums[nums[i]] = i
+        for index, num in enumerate(nums):
+            if target - num not in dict_nums:
+                dict_nums[num] = index
             else:
-                return [i, dict_nums[rem]]
+                return [index, dict_nums[target - num]]
         return []
