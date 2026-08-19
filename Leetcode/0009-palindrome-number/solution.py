@@ -1,22 +1,17 @@
-# https://leetcode.com/problems/palindrome-number/submissions/2112775378
-# Runtime: 38 ms
-# Memory: 19.27 MB
+# https://leetcode.com/problems/palindrome-number/submissions/2112792503
+# Runtime: 8 ms
+# Memory: 19.29 MB
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
-        rev= 0
-        ex = -1
-        x2 = x
-        x3 = x
+        rev = 0
+        workx = x
         if x < 0:
-            x = abs(x)
-            x2 = x
-        while x2:
-            ex += 1
-            x2 = x2//10
-        while x:
-            rev += (x % 10)  * (10 ** ex)
-            x = x // 10
-            ex -= 1
+            return False
+        elif x > 0 and x % 10 == 0:
+            return False
+        while workx:
+            rev = rev * 10 + (workx % 10)
+            workx = workx // 10
 
-        return (x3 == rev)
+        return x == rev
